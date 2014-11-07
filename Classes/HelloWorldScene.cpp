@@ -1,8 +1,9 @@
 #include "HelloWorldScene.h"
-#include "editor-support/cocostudio/CocoStudio.h"
+#include "ui/CocosGUI.h"
+#include "cocostudio/CocoStudio.h"
 
 USING_NS_CC;
-
+using namespace cocos2d::ui;
 Scene* HelloWorld::createScene()
 {
     // 'scene' is an autorelease object
@@ -31,24 +32,23 @@ bool HelloWorld::init()
   this->addChild(node);
   
   //攻撃ボタンイベントの登録
-  auto button = node->getChildByName("bt_a");
-  button->addT
-  // Event
-  auto dispatcher = Director::getInstance()->getEventDispatcher();
-  eventListener = EventListenerTouchOneByOne::create();
-  eventListener->onTouchBegan		= CC_CALLBACK_2(HelloWorld::onTouchBegan, this);
-  dispatcher->addEventListenerWithSceneGraphPriority(eventListener, this);
-  
-  return true;
-  
+  auto btnR = dynamic_cast<Button*>(node->getChildByTag(0));
+  auto btnL = dynamic_cast<Button*>(node->getChildByTag(1));
+  auto btnA = dynamic_cast<Button*>(node->getChildByTag(2));
+  auto btnB = dynamic_cast<Button*>(node->getChildByTag(3));
+  auto btnC = dynamic_cast<Button*>(node->getChildByTag(4));
+  btnR->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+  btnL->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+  btnA->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+  btnB->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+  btnC->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
 }
-bool HelloWorld::onTouchBegan(Touch* pTouch, Event* pEvent)
+
+void HelloWorld::buttonClick(Ref *sender, TouchEventType type)
 {
-  CCLog("Touch !");
-  return true;
+  auto btn = sender;
+  log("click tag:%s", btn);
 }
-
-
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)

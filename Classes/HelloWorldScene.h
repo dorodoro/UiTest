@@ -2,7 +2,8 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-
+#include "ui/CocosGUI.h"
+#include "cocostudio/CocoStudio.h"
 class HelloWorld : public cocos2d::Layer
 {
   private:
@@ -16,11 +17,10 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-    
+
+  void buttonClick(cocos2d::Ref *sender, cocos2d::ui::TouchEventType type);
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
-    // EVENT
-    bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
