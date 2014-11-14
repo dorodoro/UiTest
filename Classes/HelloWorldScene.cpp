@@ -47,7 +47,8 @@ bool HelloWorld::init()
 void HelloWorld::buttonClick(Ref *sender, TouchEventType type)
 {
   auto btn = sender;
-  log("click tag:%s", btn);
+  MenuItem* menuItem = (MenuItem*)sender;
+  log("click tag:%i", menuItem->getTag());
 }
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
