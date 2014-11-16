@@ -15,6 +15,30 @@ Scene* HelloWorld::createScene()
     // add layer as a child to scene
     scene->addChild(layer);
 
+  auto cache = SpriteFrameCache::getInstance();
+  cache->addSpriteFramesWithFile("piyo.plist");
+  Sprite* sprite = Sprite::createWithSpriteFrameName("piyo_01.png");
+  sprite->setPosition(300, 300);
+  sprite->setScale(3);
+  scene->addChild(sprite);
+
+  //CCAnimationの初期化
+  auto _animation = Animation::create();
+  
+  //画像を配列に代入
+  SpriteFrame *sprite2 = cache->getSpriteFrameByName("piyo_03.png");
+  _animation->addSpriteFrame(sprite2);
+  SpriteFrame *sprite3 = cache->getSpriteFrameByName("piyo_05.png");
+  _animation->addSpriteFrame(sprite3);
+  
+  _animation->setDelayPerUnit(0.5f); //アニメの動く時間を設定
+  _animation->setRestoreOriginalFrame(true);
+  
+  auto action = Animate::create(_animation);
+  auto anime  = RepeatForever::create(action);
+  sprite->runAction(anime);
+
+
     // return the scene
     return scene;
 }
@@ -38,10 +62,11 @@ bool HelloWorld::init()
   auto btnB = dynamic_cast<Button*>(node->getChildByTag(3));
   auto btnC = dynamic_cast<Button*>(node->getChildByTag(4));
   btnR->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
-  btnL->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+  btnL->addTouchEventListener(this, toucheventselector(HelloWorld::buttonLeftClick));
   btnA->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
   btnB->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
   btnC->addTouchEventListener(this, toucheventselector(HelloWorld::buttonClick));
+
 }
 
 void HelloWorld::buttonClick(Ref *sender, TouchEventType type)
@@ -49,6 +74,17 @@ void HelloWorld::buttonClick(Ref *sender, TouchEventType type)
   auto btn = sender;
   MenuItem* menuItem = (MenuItem*)sender;
   log("click tag:%i", menuItem->getTag());
+}
+void HelloWorld::buttonLeftClick(Ref *sender, TouchEventType type)
+{
+  auto btn = sender;
+  MenuItem* menuItem = (MenuItem*)sender;
+  
+  //アニメーションを作成　MoveBy::create(時間, (X座標, Y座標));
+  auto action = MoveBy::create(1, Vec2(100, 100));
+  
+  //アニメーション開始
+  sprite->runAction(action);
 }
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
