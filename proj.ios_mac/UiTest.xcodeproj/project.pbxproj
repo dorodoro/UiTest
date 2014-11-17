@@ -68,6 +68,8 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		F821E7801A1A21EB00AFB4B5 /* Ui.csd in Resources */ = {isa = PBXBuildFile; fileRef = F821E77F1A1A21EB00AFB4B5 /* Ui.csd */; };
+		F821E7821A1A235D00AFB4B5 /* Ui.csb in Resources */ = {isa = PBXBuildFile; fileRef = F821E7811A1A235D00AFB4B5 /* Ui.csb */; };
 		F8B7F04C1A0A52A400189002 /* MainScene.csb in Resources */ = {isa = PBXBuildFile; fileRef = F8B7F04B1A0A52A400189002 /* MainScene.csb */; };
 		F8B7F04E1A0B9FC400189002 /* 20100919182813.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F8B7F04D1A0B9FC400189002 /* 20100919182813.jpg */; };
 		F8B7F0501A0BA03000189002 /* Default in Resources */ = {isa = PBXBuildFile; fileRef = F8B7F04F1A0BA03000189002 /* Default */; };
@@ -163,6 +165,8 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		F821E77F1A1A21EB00AFB4B5 /* Ui.csd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Ui.csd; sourceTree = "<group>"; };
+		F821E7811A1A235D00AFB4B5 /* Ui.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ui.csb; sourceTree = "<group>"; };
 		F8B7F04B1A0A52A400189002 /* MainScene.csb */ = {isa = PBXFileReference; lastKnownFileType = file; path = MainScene.csb; sourceTree = "<group>"; };
 		F8B7F04D1A0B9FC400189002 /* 20100919182813.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 20100919182813.jpg; sourceTree = "<group>"; };
 		F8B7F04F1A0BA03000189002 /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F821E7811A1A235D00AFB4B5 /* Ui.csb */,
+				F821E77F1A1A21EB00AFB4B5 /* Ui.csd */,
 				963869E21A18A1880095995F /* piyo.plist */,
 				963869E31A18A1880095995F /* piyo.png */,
 				F8B7F04F1A0BA03000189002 /* Default */,
@@ -464,6 +470,7 @@
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				F821E7821A1A235D00AFB4B5 /* Ui.csb in Resources */,
 				963869E41A18A1880095995F /* piyo.plist in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -478,6 +485,7 @@
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
+				F821E7801A1A21EB00AFB4B5 /* Ui.csd in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,

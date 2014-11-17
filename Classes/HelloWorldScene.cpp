@@ -52,7 +52,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-  auto node = CSLoader::getInstance()->createNodeFromProtocolBuffers("MainScene.csb");
+  auto node = CSLoader::getInstance()->createNodeFromProtocolBuffers("Ui.csb");
   this->addChild(node);
   
   //攻撃ボタンイベントの登録
@@ -80,11 +80,6 @@ void HelloWorld::buttonLeftClick(Ref *sender, TouchEventType type)
   auto btn = sender;
   MenuItem* menuItem = (MenuItem*)sender;
   
-  //アニメーションを作成　MoveBy::create(時間, (X座標, Y座標));
-  auto action = MoveBy::create(1, Vec2(100, 100));
-  
-  //アニメーション開始
-  sprite->runAction(action);
 }
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {
